@@ -1,8 +1,22 @@
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<div class="ml-3">
-	<button class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
-		Test Tailwind CSS
-	</button>
-	<br />
-	<button class="btn btn-primary mt-3">This is a DaisyUI button</button>
+<script lang="ts">
+	import type { User } from '../lib/types/User';
+
+	let showParagraph: boolean = $state(false);
+	let { data } = $props();
+	let users: User[] = $state(data.users);
+</script>
+
+<div>
+	<button onclick={() => (showParagraph = !showParagraph)} class="btn btn-primary mt-3"
+		>This is a DaisyUI button</button
+	>
+
+	{#if showParagraph}
+		<p class="mt-3 text-center">This is a DaisyUI paragraph</p>
+	{/if}
+	{#each users as user (user.id)}
+		<p>
+			<span>({user.address.geo.lat}) ({user.address.geo.lng})</span>
+		</p>
+	{/each}
 </div>
