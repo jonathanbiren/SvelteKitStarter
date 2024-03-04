@@ -38,7 +38,7 @@
 {#if persons.length > 0}
 	<div class="h-2/3 w-1/2 overflow-auto">
 		{#each persons as person (person.id)}
-			<a href="">
+			<a href="/search/{person.id}">
 				<UserCardSmall
 					firstName={person.acf.firstname}
 					lastName={person.acf.lastname}
