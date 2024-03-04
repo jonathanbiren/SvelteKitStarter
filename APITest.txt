@@ -1,0 +1,15 @@
+#Die unten stehende URL funktioniert um die Personen Objekte abzurufen
+#Das Profilbild der Person kann mit der 'featured_media' abgerufen werden. Die URL scheint 
+#per default 10 personen Objekte auszugeben
+https://cms.communitymirrors.net/wp-json/wp/v2/person?search=Nils
+
+#Die einzelne Person kann mit der id der Person von der Wordpress API abefragt werden
+#https://cms.communitymirrors.net/wp-json/wp/v2/person/{id}
+#https://cms.communitymirrors.net/wp-json/wp/v2/person/2954
+
+# This URL lets you access the profile image of the person through the 'featured_media'
+# property on the person object 
+#https://cms.communitymirrors.net/wp-json/wp/v2/media/2880
+
+#Trying to retrieve the image associated with a person
+#https://cms.communitymirrors.net/wp-json/wp/v2/media/2880

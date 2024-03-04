@@ -1,0 +1,159 @@
+HTTP/1.1 200 OK
+Date: Mon, 04 Mar 2024 09:36:07 GMT
+Server: Apache
+X-Powered-By: PHP/8.0.30, PleskLin
+X-Robots-Tag: noindex
+Link: <https://cms.communitymirrors.net/wp-json/>; rel="https://api.w.org/"
+X-Content-Type-Options: nosniff
+Access-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link
+Access-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+X-WP-Total: 2
+X-WP-TotalPages: 1
+Allow: GET
+Vary: Origin
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: application/json; charset=UTF-8
+
+[
+  {
+    "id": 2845,
+    "date": "2023-12-04T11:10:20",
+    "date_gmt": "2023-12-04T11:10:20",
+    "guid": {
+      "rendered": "https:\/\/cms.communitymirrors.net\/?post_type=person&#038;p=2845"
+    },
+    "modified": "2023-12-06T14:36:24",
+    "modified_gmt": "2023-12-06T14:36:24",
+    "slug": "cem-gundogan",
+    "status": "publish",
+    "type": "person",
+    "link": "https:\/\/cms.communitymirrors.net\/person\/cem-gundogan\/",
+    "title": {
+      "rendered": "Cem G\u00fcndogan"
+    },
+    "content": {
+      "rendered": "",
+      "protected": false
+    },
+    "featured_media": 0,
+    "template": "",
+    "acf": {
+      "firstname": "Cem",
+      "lastname": "G\u00fcndogan",
+      "email": "c.guendogan@unibw.de",
+      "function": "Wissenschaftlicher Mitarbeiter",
+      "room": "41\/2414",
+      "research": "Programmiersysteme",
+      "alternative-names": "",
+      "url": "",
+      "tags": "",
+      "metatags": "WiMi",
+      "org": "INF2",
+      "pers": "",
+      "identifier": ""
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cms.communitymirrors.net\/wp-json\/wp\/v2\/person\/2845"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cms.communitymirrors.net\/wp-json\/wp\/v2\/person"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cms.communitymirrors.net\/wp-json\/wp\/v2\/types\/person"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cms.communitymirrors.net\/wp-json\/wp\/v2\/media?parent=2845"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 2197,
+    "date": "2023-03-09T12:39:53",
+    "date_gmt": "2023-03-09T12:39:53",
+    "guid": {
+      "rendered": "https:\/\/cms.communitymirrors.net\/?post_type=person&#038;p=2197"
+    },
+    "modified": "2023-12-06T08:56:08",
+    "modified_gmt": "2023-12-06T08:56:08",
+    "slug": "nils-rodday",
+    "status": "publish",
+    "type": "person",
+    "link": "https:\/\/cms.communitymirrors.net\/person\/nils-rodday\/",
+    "title": {
+      "rendered": "Nils Rodday"
+    },
+    "content": {
+      "rendered": "<p>Forschungsprojekt<\/p>\n<p>Moving Target Defense<\/p>\n<p>Das Projekt Moving Target Defense (MTD) hat das Ziel die Angriffsoberfl\u00e4che eines Netzes durch kontinuierliches \u00c4ndern von Parametern zu reduzieren. Hierzu z\u00e4hlen Ans\u00e4tze wie z.B. IP Address Shuffling und Port Hopping. Durch die \u00c4nderungen ist es einem Angreifer wesentlich schwerer m\u00f6glich Reconnaissance zu betreiben und hieraus eine Netz Topologie zu erstellen. S\u00e4mliche Systeme im Netz w\u00fcrden bei diesem Ansatz bereits nach kurzer Zeit unter einer anderen Adresse, s\u00e4mliche Services unter einem anderen Port erreichbar sein. Das Projekt beleuchtet verschiedene Ans\u00e4tze von MTD und stellt deren Nutzbarkeit dar. Dar\u00fcber hinaus werden neue MTD Ans\u00e4tze erforscht welche zur Absicherung von Netzen genutzt werden k\u00f6nnen.<\/p>\n<p>Konferenzbeitr\u00e4ge, Workshops und weitere T\u00e4tigkeiten:<\/p>\n<p>&#8211; IETF114, Philadelphia (2022)<br \/>\n&#8211; ICUFN, Barcelona (2022)<br \/>\n&#8211; TMA, Remote (2021)<br \/>\n&#8211; TAURIN, Remote (2021)<br \/>\n&#8211; CoNEXT, Barcelona (2020) &#8211; Poster<br \/>\n&#8211; Guest Lecture on Internet Routing Security @ Blekinge Tekniska H\u00f6gskola (BTH), Karlskrona\/Remote<br \/>\n&#8211; NOMS, Budapest\/Remote (2020)<br \/>\n&#8211; ITNAC, Auckland (2019)<br \/>\n&#8211; IMC, Amsterdam (2019)<br \/>\n&#8211; RIPE79, Rotterdam (2019)<br \/>\n&#8211; ISNCC, Istanbul (2019)<br \/>\n&#8211; CoNEXT, Heraklion (2018)<br \/>\n&#8211; RTUWO, Riga (2018)<br \/>\n&#8211; IETF102, Montr\u00e9al (2018)<br \/>\n&#8211; RSA Conference USA, San Francisco (2016)<br \/>\n&#8211; BlackHat Asia, Singapur (2016)<br \/>\n&#8211; IEEE Network Operations and Management Symposium, Istanbul (2016)<br \/>\n&#8211; EIT Innovation Day 2016, Eindhoven (2016)<br \/>\n&#8211; PvIB CISO8, Utrecht (2016)<\/p>\n<p>Ver\u00f6ffentlichungen:<\/p>\n<p>Friedemann, P.H., Rodday, N., Dreo, G., 2022, July. Assessing the RPKI Validator Ecosystem. In Proceedings of the 13th International Conference on Ubiquitous and Future Networks (ICUFN).<\/p>\n<p>Rodday, N., Cunha, I., Bush, R., Katz-Bassett, E., Rodosek, G.D., Schmidt, T.C. and W\u00e4hlisch, M., 2021. Revisiting RPKI Route Origin Validation on the Data Plane. In Proc. of Network Traffic Measurement and Analysis Conference (TMA). IFIP.<\/p>\n<p>Rodday, N., Kaltenbach, L., Cunha, I., Bush, R., Katz-Bassett, E., Rodosek, G.D., Schmidt, T.C. and W\u00e4hlisch, M., 2021, August. On the Deployment of Default Routes in Inter-domain Routing. In Proceedings of the ACM SIGCOMM 2021 Workshop on Technologies, Applications, and Uses of a Responsible Internet (pp. 14-20).<\/p>\n<p>Rodday, N., van Baaren, R., Hendriks, L., van Rijswijk-Deij, R., Pras, A. and Dreo, G., 2020, November. Evaluating RPKI ROV identification methodologies in automatically generated mininet topologies. In Proceedings of the 16th International Conference on emerging Networking EXperiments and Technologies (pp. 530-531).<\/p>\n<p>Poschinger, R., Rodday, N., Labaca-Castro, R. and Dreo Rodosek, G., 2020, November. OpenMTD: A Framework for Efficient Network-Level MTD Evaluation. In Proceedings of the 7th ACM Workshop on Moving Target Defense (pp. 31-41).<\/p>\n<p>Udo Helmbrecht, Corinna Schmitt, Raphael Labaca Castro, Christian Dietz, Nils Rodday, Klement Streit, Sascha von Schledorn, Siegfried Brunner, Christian Siegert, and Florian Steuber, 2020, May. Seminars Cyber Defence (HT 2019) and IT-Sicherheit (WT 2020), Technical Report \u2013 No. INF3-2020-05.<\/p>\n<p>Rodday, N., Castro, R.L., Streit, K. and Rodosek, G.D., 2019, November. Evaluating TCP Connection Healthiness. In 2019 29th International Telecommunication Networks and Applications Conference (ITNAC). IEEE.<\/p>\n<p>Streit, K., Castro, R.L., Rodday, N. and Rodosek, G.D., 2019, November. Topology Update Algorithm for Wireless Networks. In 2019 IEEE 16th International Conference on Mobile Ad Hoc and Sensor Systems Workshops (MASSW) (pp. 184-185). IEEE.<\/p>\n<p>Streit, K., Rodday, N., Steuber, F., Schmitt, C. and Rodosek, G.D., 2019, October. Wireless SDN for Highly Utilized MANETs. In 2019 International Conference on Wireless and Mobile Computing, Networking and Communications (WiMob) (pp. 226-234). IEEE<\/p>\n<p>Nils Rodday, Randy Bush, Italo Cunha, Ethan Katz-Bassett, Gabi Dreo Rodosek, Thomas C. Schmidt and Matthias W\u00e4hlisch. Extending RPKI ROV Measurement Coverage, Poster @ Internet Measurement Conference (IMC), 2019 ACM.<\/p>\n<p>Nils Rodday, Klement Streit, Gabi Dreo Rodosek and Aiko Pras. On the Usage of DSCP and ECN Codepoints in Internet Backbone Traffic Traces for IPv4 and IPv6. In International Symposium on Networks, Computers and Communications (ISNCC), 2019 IEEE. ISBN: 978-1-7281-1243-5.<\/p>\n<p>Nils Rodday, Klement Streit, Gabi Dreo Rodosek, Aiko Pras; An Empirical Study of DSCP and ECN Usage by Application in Internet Traffic Traces, Poster @ CoNEXT 2018.<\/p>\n<p>Klement Streit, Nils Rodday, Gabi Dreo Rodosek, AODV-CBR: Capacity-based Path Discovery Algorithm for MANETs with High Utilization, RTUWO&#8217;18 &#8211; Advances in Wireless and Optical Communications, Nov 2018, Riga, Latvia. 2018.<\/p>\n<p>Nils Rodday, Aiko Pras and Gabi Dreo Rodosek. Towards European Network Sovereignty. In IFIP Proceedings of AIMS 2018. ISBN: 978-3-903176-12-6. Page 75-79.<\/p>\n<p>Rodday, N.M., Schmidt, R.D.O. and Pras, A., 2016, April. Exploring security vulnerabilities of unmanned aerial vehicles. In Network Operations and Management Symposium (NOMS), 2016 IEEE\/IFIP (pp. 993-994). IEEE.<\/p>\n<p>Seminar\/Bachelor\/Masterthemen:<\/p>\n<p>BGP hijacking \u2013 RPKI topics<\/p>\n<p>BGP hijacking is a pressing issue that has not yet been fully resolved. As trust is the basis for a BGP announcement to propagate through the Internet, it is relatively easy for an attacker to announce prefixes belonging to other organizations.<\/p>\n<p>Several solutions have been proposed to (partially) solve the problem of BGP hijacking. RPKI is a promising approach that is using Origin-Authentication through certificates to determine whether an entity is allowed to announce a certain prefix or not.<\/p>\n<p>As RPKI is a fast-moving field that is actively being researched by CODE, we offer several topics in the field. Students interested in the security of Internet routing are welcome to send a mail and ask for up-to-date topics in this area.<\/p>\n<p>Network-based Moving Target Defense<br \/>\nOne of the projects CODE is pursuing is network based Moving Target Defense. Permanently altering connection parameters (IP Address Shuffling \/ Port Hopping) is helping in reducing the attack surface an attacker has to target a system.<\/p>\n<p>We offer several topics in this area (setup of lab environments, implementation of MTD approaches, evaluation of these approaches) for different levels. Students interested in the field of network security are invited to send a mail to ask for more specifics.<\/p>\n<p>P4 \u2013 Network Programming<br \/>\nP4 is a new programming language to allow programming of packet forwarding planes (network cards). The advantages of Software-Defined-Networking are combined with the advantage of quick execution in hardware, therefore putting together best of both worlds.<\/p>\n<p>We have several P4 networking cards at our disposal and are looking for students interested in working with a new programming paradigm that might change the way future networks are built. Please send an email if you would like to know where we currently stand with this project and to get to know more details about work that can be done.<\/p>\n",
+      "protected": false
+    },
+    "featured_media": 2198,
+    "template": "",
+    "acf": {
+      "alternative-names": "",
+      "url": "",
+      "tags": "",
+      "metatags": "WiMi",
+      "org": "INF3,INF3.2",
+      "pers": "",
+      "identifier": "",
+      "firstname": "Nils ",
+      "lastname": "Rodday",
+      "email": "nils.rodday@unibw.de",
+      "function": "Wiss. Mitarbeiter(in)",
+      "room": "Carl-Wery-Str. 22,\t1612",
+      "research": ""
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/cms.communitymirrors.net\/wp-json\/wp\/v2\/person\/2197"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/cms.communitymirrors.net\/wp-json\/wp\/v2\/person"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/cms.communitymirrors.net\/wp-json\/wp\/v2\/types\/person"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https:\/\/cms.communitymirrors.net\/wp-json\/wp\/v2\/media\/2198"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/cms.communitymirrors.net\/wp-json\/wp\/v2\/media?parent=2197"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

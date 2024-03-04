@@ -1,23 +1,23 @@
 interface Geo {
 	lat: string;
 	lng: string;
-  }
-  
-  interface Address {
+}
+
+interface Address {
 	street: string;
 	suite: string;
 	city: string;
 	zipcode: string;
 	geo: Geo;
-  }
-  
-  interface Company {
+}
+
+interface Company {
 	name: string;
 	catchPhrase: string;
 	bs: string;
-  }
-  
-  export interface User {
+}
+
+export interface User {
 	id: number;
 	name: string;
 	username: string;
@@ -26,4 +26,4 @@ interface Geo {
 	phone: string;
 	website: string;
 	company: Company;
-  }
+}

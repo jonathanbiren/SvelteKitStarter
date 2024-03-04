@@ -1,10 +1,11 @@
-<script>
-	import Navigation from './../components/ui/Navigation.svelte';
+<script lang="ts">
 	import '../app.pcss';
+	import Navigation from '$lib/components/ui/Navigation.svelte';
+	//Access the layout data here
+	let { data } = $props();
 </script>
 
 <Navigation />
-
-<div class="flex flex-row justify-center pt-20">
+<div class="flex h-screen flex-col items-center justify-center overflow-auto bg-slate-200">
 	<slot />
 </div>

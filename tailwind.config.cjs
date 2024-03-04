@@ -8,7 +8,7 @@ const config = {
 
 	plugins: [require('daisyui')],
 	daisyui: {
-		themes: ['bumblebee', 'fantasy'] 
+		themes: ['bumblebee', 'fantasy']
 	}
 };
 
