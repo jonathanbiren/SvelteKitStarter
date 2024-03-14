@@ -13,7 +13,7 @@ interface ImageResponse {
 	media_details?: MediaDetails;
 }
 
-export const load: PageLoad = async ({ params }) => {
+export const load: PageLoad = async ({ params, fetch }) => {
 	const id = params.id;
     console.log(params.id)
 	const res = await fetch(`https://cms.communitymirrors.net/wp-json/wp/v2/person/${id}`);
