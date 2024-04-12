@@ -1,22 +1,21 @@
 <script lang="ts">
 	import type { Person } from '$lib/types/Person';
 	import UserCardSmall from '$lib/components/ui/UserCardSmall.svelte';
+	import { fetchPeopleBySearch } from '$lib/utils/WordPressCMS';
 	let searchQuery: string = $state('');
 	let persons: Person[] = $state([]);
-	let message: string = $state('');
 
+	//* Extract this function into a util file, since you also need it for the search inside
+	//* the [fullName] page
 	async function performSearch(event: Event) {
 		event.preventDefault();
-		const response = await fetch(
-			`https://cms.communitymirrors.net/wp-json/wp/v2/person?search=${searchQuery}`
-		);
-		if (response.ok) {
-			const searchResult: Person[] = await response.json();
+		const searchResult: Person[] | null = await fetchPeopleBySearch(searchQuery);
+		if (searchResult) {
 			persons = searchResult;
 			searchQuery = '';
 		} else {
+			// TODO: Create a toast message that lets the user know the no users were found
 			persons = [];
-			throw new Error('Failed to fetch search results');
 		}
 	}
 

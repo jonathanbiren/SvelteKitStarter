@@ -10,6 +10,12 @@
 		"sourceMap": true,
 		"strict": true,
 		"moduleResolution": "bundler"
+	},
+	"exclude": ["node_modules", "dist", ".svelte-kit", "docs"],
+	"typedocOptions": {
+		"entryPoints": ["src"],
+		"out": "docs",
+		"entryPointStrategy": "expand"
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//

@@ -2,7 +2,7 @@
 	import '../app.pcss';
 	import Navigation from '$lib/components/ui/Navigation.svelte';
 	let { data } = $props();
-	let authStatus: boolean = $state(data.isAuthenicated);
+	let authStatus: boolean = $state(data.isAuthenticated);
 </script>
 
 <Navigation {authStatus} />
@@ -12,6 +12,6 @@
 
 <style>
 	#layout {
-		height: calc(100vh - 68px)
+		height: calc(100vh - 68px);
 	}
 </style>

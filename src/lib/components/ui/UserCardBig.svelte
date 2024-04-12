@@ -4,13 +4,13 @@
 	let { person, imgURL } = $props<{ person: Person; imgURL: string }>();
 </script>
 
-<div class="">
+<div class="max-w-xl">
 	<div role="tablist" class="tabs tabs-bordered tabs-lg w-full">
 		<input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Allgemein" checked />
 		<div role="tabpanel" class="tab-content rounded-box border-base-300 bg-base-100 p-1">
 			<div class="grid grid-cols-3 items-stretch">
 				<div class="col-span-1">
-					<img src={imgURL} alt="No User img" class="h-full w-full object-cover" />
+					<img src={imgURL} alt="No User img" class="object-cover" />
 				</div>
 				<div class="col-span-1">
 					<div class="flex flex-col items-center justify-center">

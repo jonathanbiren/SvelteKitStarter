@@ -1,7 +1,7 @@
 <script lang="ts">
 	let { data } = $props();
     //Accessing authentication status through the root layout data 
-	let authStatus: boolean = $state(data.isAuthenicated);
+	let authStatus: boolean = $state(data.isAuthenticated);
 </script>
 
 <h1>This is the home page</h1>

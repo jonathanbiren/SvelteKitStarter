@@ -2,6 +2,8 @@
 	//In Svelte 5, accessing the data that is returned by the form action seems to only be possible
 	// by using the page store. Be sure to check back for the official documentation of the svelte 5 release.
 	import { page } from '$app/stores';
+	//accesses the page store, whose form property will contain data once 
+	//a form has been submitted for the first time
 	let form = $state($page.form);
 
 	//This effect will focus the password input field if the form has been submitted with incorrect

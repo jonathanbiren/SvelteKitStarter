@@ -8,12 +8,14 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
+  binaryTargets = ["native", "darwin-arm64"]
 }
 
 
 model UserSmall {
   id    Int    @id @default(autoincrement())
   email String @unique
-  name  String
+  firstName  String
+  lastName String
   password String
 }
