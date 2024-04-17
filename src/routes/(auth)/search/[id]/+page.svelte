@@ -7,8 +7,7 @@
 	let imgURL: string = $state(data.imgURL);
 </script>
 
-<div class="w-1/2">
-	{person.acf.firstname}
+<div class="w-1/2 flex flex-col justify-center items-center">
 	<UserCardBig {person} {imgURL}></UserCardBig>
+	<MailToButton {person} />
 </div>
-<MailToButton {person} />

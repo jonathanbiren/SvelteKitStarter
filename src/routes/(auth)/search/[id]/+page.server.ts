@@ -6,9 +6,8 @@ import { redirect } from '@sveltejs/kit';
 //We are currently not using the inherent fetch function that the load function provides
 //We will need to check whether this causes issues in the future
 export const load: PageServerLoad = async ({
-	params
-}): Promise<{ person: Person; imgURL: string }> => {
-	console.log('We arrive here');
+																						 params
+																					 }): Promise<{ person: Person; imgURL: string }> => {
 	const id = params.id;
 	console.log(params.id);
 	const person: Person | null = await fetchPersonByID(id);
