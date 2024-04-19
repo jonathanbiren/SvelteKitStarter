@@ -18,7 +18,6 @@
 </script>
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 <div class="navbar bg-gray-100">
 	<div class="flex-1">
 		<a href="/" class="btn btn-ghost text-xl">HOME</a>
@@ -39,10 +38,16 @@
 			{/if}
 			<li><a class="font-bold" href="/login">Login</a></li>
 			<li>
-				<button class="font-bold" onclick={() => navigateTo('/profiles')}>Profiles</button>
+				<a class="font-bold" href="/profiles">Profiles</a>
+				<!--
+								<button class="font-bold" onclick={() => navigateTo('/profiles')}>Profiles</button>
+				-->
 			</li>
 			<li>
-				<button class="font-bold" onclick={() => navigateTo('/search')}>Search</button>
+				<!--
+								<button class="font-bold" onclick={() => navigateTo('/search')}>Search</button>
+				-->
+				<a class="font-bold" href="/search">Search</a>
 			</li>
 		</ul>
 	</div>

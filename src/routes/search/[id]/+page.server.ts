@@ -7,14 +7,15 @@ import { redirect } from '@sveltejs/kit';
 //We will need to check whether this causes issues in the future
 export const load: PageServerLoad = async ({
 																						 params
-																					 }): Promise<{ person: Person; imgURL: string }> => {
+																					 }: { params: { id: string } }): Promise<{
+	person: Person;
+	imgURL: string
+}> => {
 	const id = params.id;
 	console.log(params.id);
 	const person: Person | null = await fetchPersonByID(id);
 	if (person !== null) {
 		const imgURL: string = await fetchPersonImageURL(person);
-		console.log(person.acf.firstname);
-		console.log(imgURL);
 		return {
 			person,
 			imgURL

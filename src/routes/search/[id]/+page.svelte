@@ -8,6 +8,6 @@
 </script>
 
 <div class="w-1/2 flex flex-col justify-center items-center">
-	<UserCardBig {person} {imgURL}></UserCardBig>
+	<UserCardBig {person} {imgURL}/>
 	<MailToButton {person} />
 </div>

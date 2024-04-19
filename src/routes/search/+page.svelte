@@ -2,6 +2,7 @@
 	import type { Person } from '$lib/types/Person';
 	import UserCardSmall from '$lib/components/ui/UserCardSmall.svelte';
 	import { fetchPeopleBySearch } from '$lib/utils/WordPressCMS';
+	import { pageCounter } from '$lib/stores/pageCounter.svelte';
 	let searchQuery: string = $state('');
 	let persons: Person[] = $state([]);
 

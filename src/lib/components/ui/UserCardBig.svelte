@@ -4,7 +4,7 @@
 	let { person, imgURL } = $props<{ person: Person; imgURL: string }>();
 </script>
 
-<div class="max-w-xl">
+<div class="max-w-5xl">
 	<div role="tablist" class="tabs tabs-bordered tabs-lg w-full">
 		<input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Allgemein" checked />
 		<div role="tabpanel" class="tab-content rounded-box border-base-300 bg-base-100 p-1">
@@ -25,7 +25,9 @@
 					</div>
 				</div>
 			</div>
-			<p class="mt-5 bg-slate-100">{@html person.content.rendered}</p>
+			<div class="mt-3 w-full px-4 text-left h-auto max-h-96 overflow-y-auto">
+				<p class="mt-5 bg-slate-50">{@html person.content.rendered}</p>
+			</div>
 		</div>
 
 		<input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Forschung" />

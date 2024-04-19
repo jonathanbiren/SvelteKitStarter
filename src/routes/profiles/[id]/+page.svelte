@@ -7,6 +7,6 @@
 	const imgURL: string = $state(data.imgURL); 
 </script>
 
-<div class="w-1/2">
+<div class="w-1/2 flex flex-col justify-center items-center">
 	<UserCardBig {person} {imgURL}></UserCardBig>
 </div>
