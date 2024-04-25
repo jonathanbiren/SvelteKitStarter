@@ -5,15 +5,17 @@
 	let { authStatus } = $props();
 
 	const commonName = Cookies.get('commonName') ?? '';
+	const personID = Cookies.get('personID') ?? '';
+	console.log(personID)
 
-	function navigateTo(route: string): void {
+/*	function navigateTo(route: string): void {
 		if (authStatus) {
 			goto(route);
 		} else {
 			const modal = document.getElementById('my_modal_1') as HTMLDialogElement;
 			modal.showModal();
 		}
-	}
+	}*/
 
 </script>
 

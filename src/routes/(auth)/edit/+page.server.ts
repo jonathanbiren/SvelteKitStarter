@@ -22,12 +22,16 @@ export const actions: Actions = {
 	updateUser: async ({ request, cookies, fetch }) => {
 		const personID = cookies.get('personID');
 		const formData = await request.formData();
-		const firstName = formData.get('firstName') as string;
-		const title = formData.get('title') as string;
+		const {
+			firstName,
+			lastName,
+			email,
+			role,
+			room,
+			research
+		} = Object.fromEntries(formData);
+		const dataStandard = {};
 
-		const data = {
-			title
-		};
 
 		const optionsStandard = {
 			method: 'POST',
@@ -35,7 +39,7 @@ export const actions: Actions = {
 				'Content-Type': 'application/json',
 				'Authorization': 'Basic ' + btoa(WORDPRESS_USERNAME + ':' + APPLICATION_PASSWORD)
 			},
-			body: JSON.stringify(data)
+			body: JSON.stringify(dataStandard)
 		};
 
 		const optionsACF = {
@@ -46,7 +50,12 @@ export const actions: Actions = {
 			},
 			body: JSON.stringify({
 				fields: {
-					firstname: firstName
+					firstname: firstName,
+					lastname: lastName,
+					email: email,
+					function: role,
+					room: room,
+					research: research
 				}
 			})
 		};
@@ -54,7 +63,7 @@ export const actions: Actions = {
 		try {
 			const responseStandard = await fetch(`${PERSON_COLLECTION_ENDPOINT}/${personID}`, optionsStandard);
 			const responseACF = await fetch(`${ACF_FIELDS_ENDPOINT}${personID}`, optionsACF);
-			console.log('responsteStandard.ok' + responseACF.ok, 'responseACF.ok' + responseACF.ok);
+			console.log('responsteStandard.ok ' + responseACF.ok, 'responseACF.ok ' + responseACF.ok);
 			if (responseStandard.ok && responseACF.ok) {
 				return {
 					success: true

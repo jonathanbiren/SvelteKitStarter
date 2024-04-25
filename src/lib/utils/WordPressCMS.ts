@@ -51,7 +51,7 @@ export async function fetchPersonImageURL(person: Person): Promise<string> {
 		return '';
 	}
 }
-
+//This function returns the first Person found by the search query
 export async function fetchPersonBySearch(searchQuery: string): Promise<Person | null> {
 	try {
 		const res: Response = await fetch(`${PERSON_COLLECTION_SEARCH_ENDPOINT}${searchQuery}`);
