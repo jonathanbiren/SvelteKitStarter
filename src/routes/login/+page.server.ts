@@ -6,6 +6,8 @@ import jwt from 'jsonwebtoken';
 import { PRIVATE_KEY } from '$env/static/private';
 import { authenticateUserLocal } from '$lib/utils/loginLocal';
 import { authenticateUserLDAP } from '$lib/utils/loginLDAP';
+import { fetchPersonBySearch } from '$lib/utils/WordPressCMS';
+import type { Person } from '$lib/types/Person';
 
 const STATUS_REDIRECT = 303;
 const STATUS_FORBIDDEN = 403;
@@ -27,10 +29,20 @@ export const actions: Actions = {
 
 		const { valid, commonName } = await authenticateUser(email, password);
 
-		if (valid) {
+		if (valid && commonName) {
 			const payload = { authenticated: true };
 			const options = { expiresIn: '1h' };
 			const token = jwt.sign(payload, PRIVATE_KEY, options);
+
+			const person: Person | null = await fetchPersonBySearch(commonName);
+			if (person) {
+				//We absolutely need to set the personID cookie so that we can use it to retrieve data from the Wordpress CMS
+				cookies.set('personID', JSON.stringify(person.id), {
+					path: '/',
+					httpOnly: false, // This allows client-side JavaScript to access it
+					maxAge: 3600  // Match the session/token expiration
+				});
+			}
 
 			// Set JWT cookie with the httpOnly flag, making the cookie unaccessible through JavaScript from the browser
 			cookies.set('jwt', token, {
@@ -53,7 +65,7 @@ export const actions: Actions = {
 				console.log('Auth was successful but common name is empty:', commonName);
 			}
 		} else {
-			throw fail(STATUS_FORBIDDEN, { incorrect: true, email });
+			return fail(STATUS_FORBIDDEN, { incorrect: true, email });
 		}
 	}
 };

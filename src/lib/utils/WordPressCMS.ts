@@ -1,8 +1,13 @@
 import type { Person } from '$lib/types/Person';
 
-const PERSON_COLLECTION_ENDPOINT: string = 'https://cms.communitymirrors.net/wp-json/wp/v2/person';
-const MEDIA_COLLECTION_ENDPOINT: string = 'https://cms.communitymirrors.net/wp-json/wp/v2/media/';
-const PERSON_COLLECTION_SEARCH_ENDPOINT: string =
+export const WORDPRESS_USERNAME = 'biren';
+export const APPLICATION_PASSWORD = '11kCkXnqezvzskk1GvuqLH76';
+
+
+export const ACF_FIELDS_ENDPOINT: string = 'https://cms.communitymirrors.net/wp-json/acf/v2/';
+export const PERSON_COLLECTION_ENDPOINT: string = 'https://cms.communitymirrors.net/wp-json/wp/v2/person';
+export const MEDIA_COLLECTION_ENDPOINT: string = 'https://cms.communitymirrors.net/wp-json/wp/v2/media/';
+export const PERSON_COLLECTION_SEARCH_ENDPOINT: string =
 	'https://cms.communitymirrors.net/wp-json/wp/v2/person?search=';
 
 interface MediaDetails {
@@ -55,8 +60,7 @@ export async function fetchPersonBySearch(searchQuery: string): Promise<Person |
 		}
 		const personArray: Person[] = await res.json();
 		if (personArray.length !== 0) {
-			const person: Person = personArray[0];
-			return person;
+			return personArray[0];
 		}
 	} catch (error) {
 		console.error(error);

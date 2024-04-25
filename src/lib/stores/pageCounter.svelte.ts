@@ -2,6 +2,8 @@
 function createPageCounter(initialValue: number) {
 	let pageCounter: number = $state(initialValue);
 
+	//We need to use a getter here, so that the value of the counter at the time the getter is called
+	// is returned, instead of just having a fixed value
 	return {
 		get currentValue() {
 			return pageCounter;

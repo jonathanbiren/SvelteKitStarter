@@ -1,9 +1,0 @@
-import { Handle } from "@sveltejs/kit";
-import { error } from "@sveltejs/kit";
-import type { Person from '$lib/types/Person';
-
-export const handle: Handle = async ({ event, resolve }) => {
-    const authStatus =  await event.cookies.get('authentication');
-    if (authStatus) type { Person 
-    
-};
