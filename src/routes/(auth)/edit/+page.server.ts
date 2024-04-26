@@ -19,7 +19,7 @@ export const load: PageServerLoad = async ({ cookies }) => {
 
 
 export const actions: Actions = {
-	updateUser: async ({ request, cookies, fetch }) => {
+	updateUser: async ({ request, cookies, fetch  }) => {
 		const personID = cookies.get('personID');
 		const formData = await request.formData();
 		const {

@@ -1,9 +1,10 @@
 <script lang="ts">
 	import type { Person } from '$lib/types/Person';
+	import { page } from '$app/stores';
 
 	let { data } = $props();
 	let person: Person | null | undefined = $state(data.person);
-
+	let form = $state($page.form);
 </script>
 
 <!--
@@ -54,5 +55,17 @@
 			<button type="submit" class="btn btn-accent px-16 font-extrabold text-lg">Submit</button>
 		</div>
 
+		<div class="w-full text-center mt-5">
+			<div>
+				{#if form}
+					{#if form.success}
+						<p class="text-green-700 font-bold text-md">Profile successfully updated</p>
+					{:else if !form.success}
+						<p class="text-red-600 font-bold text-lg">Error occured when trying to update profile</p>
+					{/if}
+				{/if}
+			</div>
+		</div>
 	</form>
 </div>
+
