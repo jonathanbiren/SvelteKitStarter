@@ -19,7 +19,7 @@
 </script>
 
 <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-	<img class="mx-auto h-16 w-auto" src="/portal_logo.png" alt="Uni-Logo" />
+	<img class="mx-auto h-16 w-auto" src="/logos/portal_logo.png" alt="Uni-Logo" />
 	<h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
 		Sign into your account
 	</h2>

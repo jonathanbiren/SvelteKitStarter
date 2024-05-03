@@ -28,9 +28,10 @@ export const actions: Actions = {
 			email,
 			role,
 			room,
-			research
+			research,
+			content
 		} = Object.fromEntries(formData);
-		const dataStandard = {};
+		const dataStandard = {content};
 
 
 		const optionsStandard = {

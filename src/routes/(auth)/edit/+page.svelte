@@ -14,9 +14,9 @@
 	<button type="submit">Submit</button>
 </form>-->
 
-<div class="w-full h-full">
-	<form method="POST" action="?/updateUser" class="w-full h-full">
-		<div class="grid grid-cols-3 w-2/3 h-1/2 bg-green-400">
+<div class="w-full">
+	<form method="POST" action="?/updateUser" class="flex flex-col items-center justify-center">
+		<div class="grid grid-cols-4 w-2/3 h-1/2 bg-green-400">
 			<div class="flex flex-col items-center justify-items-start col-span-2 bg-red-300 ">
 				<div class="flex flex-col items-center justify-center bg-yellow-300 w-full m-3">
 					<p class="font-bold">Vorname</p>
@@ -49,7 +49,10 @@
 								 class="input input-bordered w-full max-w-md text-center my-1.5" />
 				</div>
 			</div>
-			<div class="col-span-1 bg-blue-500 h-full"></div>
+			<div class="col-span-2 bg-blue-500 h-full">
+				<div class="h-1/2 w-full"></div>
+				<textarea name="content" class="textarea textarea-bordered h-1/2 w-full">{person?.content.rendered}</textarea>
+			</div>
 		</div>
 		<div class="flex flex-row items-center justify-center mt-10">
 			<button type="submit" class="btn btn-accent px-16 font-extrabold text-lg">Submit</button>
