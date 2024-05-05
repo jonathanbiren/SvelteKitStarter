@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { Person } from '$lib/types/Person';
+	import {DEFAULT_IMG_URL} from '$lib/utils/WordPressCMS';
 	//This is how you can use TypeScript to define the type of the props
 	let { person, imgURL } = $props<{ person: Person; imgURL: string }>();
-	const defaultImgUrl = 'https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small_2x/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg';
 </script>
 
 <div class="max-w-5xl">
@@ -11,7 +11,7 @@
 		<div role="tabpanel" class="tab-content rounded-box border-base-300 bg-base-100 p-1">
 			<div class="grid grid-cols-3 items-stretch">
 				<div class="col-span-1">
-					<img src={imgURL || defaultImgUrl} alt="No User img" class="object-cover" />
+					<img src={imgURL || DEFAULT_IMG_URL} alt="No User img" class="object-cover" />
 				</div>
 				<div class="col-span-1">
 					<div class="flex flex-col items-center justify-center">

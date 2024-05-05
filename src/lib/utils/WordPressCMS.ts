@@ -3,7 +3,7 @@ import type { Person } from '$lib/types/Person';
 export const WORDPRESS_USERNAME = 'biren';
 export const APPLICATION_PASSWORD = '11kCkXnqezvzskk1GvuqLH76';
 
-
+export const DEFAULT_IMG_URL: string = 'https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small_2x/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg'
 export const ACF_FIELDS_ENDPOINT: string = 'https://cms.communitymirrors.net/wp-json/acf/v2/';
 export const PERSON_COLLECTION_ENDPOINT: string = 'https://cms.communitymirrors.net/wp-json/wp/v2/person';
 export const MEDIA_COLLECTION_ENDPOINT: string = 'https://cms.communitymirrors.net/wp-json/wp/v2/media/';
@@ -47,7 +47,7 @@ export async function fetchPersonImageURL(person: Person): Promise<string> {
 		const imgURL: string = imgMetaData.media_details?.sizes.full.source_url || '';
 		return imgURL;
 	} catch (error) {
-		console.error(error);
+		console.error('This person does not have an image');
 		return '';
 	}
 }
