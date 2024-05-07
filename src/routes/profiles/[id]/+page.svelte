@@ -5,10 +5,14 @@
 
 	let { data } = $props();
 	let person: Person = $state(data.data);
-	const imgURL: string = $state(data.imgURL); 
+	const imgURL: string = $state(data.imgURL);
+
+	const buttonText: string = 'Aktualisieren';
+	const emailBody: string = `Hallo, mein Name ist ${person.acf.firstname} ${person.acf.lastname}, und ich würde gerne folgende Daten auf meinem
+	Community Mirrors Profil aktualisieren: \n\n`;
 </script>
 
 <div class="w-1/2 flex flex-col justify-center items-center">
 	<UserCardBig {person} {imgURL}></UserCardBig>
-	<MailToButton {person}></MailToButton>
+	<MailToButton {person} {buttonText} {emailBody}></MailToButton>
 </div>
