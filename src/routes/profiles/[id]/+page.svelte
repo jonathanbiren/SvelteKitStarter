@@ -4,7 +4,7 @@
 	import MailToButton from '$lib/components/ui/MailToButton.svelte';
 
 	let { data } = $props();
-	let person: Person = $state(data.data);
+	let person: Person = $state(data.person);
 	const imgURL: string = $state(data.imgURL);
 
 	const buttonText: string = 'Aktualisieren';

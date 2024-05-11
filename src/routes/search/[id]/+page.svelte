@@ -5,9 +5,10 @@
 	let { data } = $props();
 	let person: Person = $state(data.person);
 	let imgURL: string = $state(data.imgURL);
+	let buttonText: string = 'Aktualisieren';
 </script>
 
 <div class="w-1/2 flex flex-col justify-center items-center">
 	<UserCardBig {person} {imgURL}/>
-	<MailToButton {person} />
+	<MailToButton {person} {buttonText} />
 </div>

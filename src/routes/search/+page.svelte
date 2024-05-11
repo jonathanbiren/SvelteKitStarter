@@ -6,7 +6,7 @@
 	let persons: Person[] = $state([]);
 
 	//* Extract this function into a util file, since you also need it for the search inside
-	//* the [fullName] page
+	//* the [id] page
 	async function performSearch(event: Event) {
 		event.preventDefault();
 		const searchResult: Person[] | null = await fetchPeopleBySearch(searchQuery);

@@ -12,7 +12,7 @@ export const load: PageServerLoad = async ({
 	imgURL: string
 }> => {
 	const id = params.id;
-	console.log(params.id);
+	console.log('icon test 5: ', id);
 	const person: Person | null = await fetchPersonByID(id);
 	if (person !== null) {
 		const imgURL: string = await fetchPersonImageURL(person);

@@ -12,6 +12,7 @@ import {
 export const load: PageServerLoad = async ({ cookies }) => {
 	const personID = cookies.get('personID');
 	if (personID) {
+		console.log('icon test 3: ', personID);
 		const person: Person | null = await fetchPersonByID(personID);
 		let imgURL;
 		if (person) {

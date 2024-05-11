@@ -5,13 +5,12 @@ to achieve this by having multiple cards that show the user information -->
 	import { pageCounter } from '$lib/stores/pageCounter.svelte';
 	import type { Person } from '$lib/types/Person.ts';
 	import UserCardSmall from '$lib/components/ui/UserCardSmall.svelte';
+	import { PERSON_COLLECTION_ENDPOINT } from '$lib/utils/WordPressCMS';
 
-	const API_ENDPOINT = 'https://cms.communitymirrors.net/wp-json/wp/v2/person';
 	let persons: Person[] = $state([]);
 
-	// TODO: Implement pagination
 	async function updatePersons(page: number) {
-		const res = await fetch(`${API_ENDPOINT}?page=${page}&per_page=10`);
+		const res = await fetch(`${PERSON_COLLECTION_ENDPOINT}?page=${page}&per_page=10`);
 		persons = await res.json();
 	}
 
@@ -24,9 +23,7 @@ to achieve this by having multiple cards that show the user information -->
 <h1 class="mb-6 text-center text-3xl font-bold text-blue-800">Alle Nutzer</h1>
 <div class="h-2/3 w-1/2 overflow-auto scrollbar scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
 	{#each persons as person (person.id)}
-		<!--
-				Passing the slug to the [id] page, where it will be used to fetch the user information
-		-->
+		{person.id}
 		<a href="/profiles/{person.id}">
 			<UserCardSmall
 				firstName={person.acf.firstname}

@@ -1,21 +1,20 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import Cookies from 'js-cookie';
 
 	let { authStatus } = $props();
 
 	const commonName = Cookies.get('commonName') ?? '';
 	const personID = Cookies.get('personID') ?? '';
-	console.log(personID)
+	console.log(personID);
 
-/*	function navigateTo(route: string): void {
-		if (authStatus) {
-			goto(route);
-		} else {
-			const modal = document.getElementById('my_modal_1') as HTMLDialogElement;
-			modal.showModal();
-		}
-	}*/
+	/*	function navigateTo(route: string): void {
+			if (authStatus) {
+				goto(route);
+			} else {
+				const modal = document.getElementById('my_modal_1') as HTMLDialogElement;
+				modal.showModal();
+			}
+		}*/
 
 </script>
 
@@ -27,8 +26,8 @@
 	<div class="flex-none">
 		<ul class="menu menu-horizontal px-1">
 			{#if authStatus}
-				{#if commonName}
-					<li><a class="font-bold" href="/{commonName}"><span class="material-icons">person</span></a></li>
+				{#if commonName || personID}
+					<li><a class="font-bold" href="/{personID}"><span class="material-icons">person</span></a></li>
 				{:else}
 					<li><a class="font-bold" href="/search"><span class="material-icons">search</span></a></li>
 				{/if}
