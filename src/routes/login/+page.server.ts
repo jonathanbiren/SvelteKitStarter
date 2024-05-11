@@ -35,6 +35,8 @@ export const actions: Actions = {
 			const token = jwt.sign(payload, PRIVATE_KEY, options);
 
 			const person: Person | null = await fetchPersonByMail(userMail);
+			const isTeamAss: boolean = !!person?.acf?.metatags?.toLowerCase().includes('teamass');
+
 			if (person) {
 				//We absolutely need to set the personID cookie so that we can use it to retrieve data from the Wordpress CMS
 				cookies.set('personID', JSON.stringify(person.id), {
@@ -52,6 +54,12 @@ export const actions: Actions = {
 
 				//Set a second cookie that allows the client-side to access the common name of the user
 				cookies.set('commonName', commonName, {
+					path: '/',
+					httpOnly: false, // This allows client-side JavaScript to access it
+					maxAge: 3600  // Match the session/token expiration
+				});
+
+				cookies.set('isTeamAss', JSON.stringify(isTeamAss), {
 					path: '/',
 					httpOnly: false, // This allows client-side JavaScript to access it
 					maxAge: 3600  // Match the session/token expiration

@@ -5,6 +5,7 @@
 
 	const commonName = Cookies.get('commonName') ?? '';
 	const personID = Cookies.get('personID') ?? '';
+	const isTeamAss = JSON.parse(Cookies.get('isTeamAss') ?? 'false');
 	console.log(personID);
 
 	/*	function navigateTo(route: string): void {
@@ -30,6 +31,9 @@
 					<li><a class="font-bold" href="/{personID}"><span class="material-icons">person</span></a></li>
 				{:else}
 					<li><a class="font-bold" href="/search"><span class="material-icons">search</span></a></li>
+				{/if}
+				{#if isTeamAss}
+					<li><a class="font-bold" href="/teamass"><span class="material-icons">admin_panel_settings</span></a></li>
 				{/if}
 				<li>
 					<form method="POST" action="/logout">
