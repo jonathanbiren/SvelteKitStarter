@@ -21,6 +21,7 @@ export const load = async ({ cookies }) => {
 	const orgPersonInfo: OrgPersonInfo[] = await fetchAndFlattenData(personOrgs);
 
 	return {
-		orgPersonInfo
+		orgPersonInfo,
+		personOrgs
 	};
 };
