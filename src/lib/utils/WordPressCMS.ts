@@ -10,6 +10,7 @@ export const PERSON_COLLECTION_MAIL_ENDPOINT: string = 'https://cms.communitymir
 export const MEDIA_COLLECTION_ENDPOINT: string = 'https://cms.communitymirrors.net/wp-json/wp/v2/media/';
 export const PERSON_COLLECTION_SEARCH_ENDPOINT: string =
 	'https://cms.communitymirrors.net/wp-json/wp/v2/person?search=';
+export const PERSON_COLLECTION_ORG_ENDPOINT = 'https://cms.communitymirrors.net/wp-json/wp/v2/people/org/?org=';
 
 interface MediaDetails {
 	sizes: {
@@ -23,10 +24,17 @@ interface ImageResponse {
 	media_details?: MediaDetails;
 }
 
-interface PersonInfo {
+export interface PersonInfo {
 	id: number;
 	title: string;
 	content: string;
+}
+
+export interface OrgPersonInfo {
+	id: number;
+	title: string;
+	link: string;
+	org: string;
 }
 
 export async function fetchPersonByID(id: string): Promise<Person | null> {
@@ -114,5 +122,47 @@ export async function fetchPeopleBySearch(searchQuery: string): Promise<Person[]
 	} catch (error) {
 		console.error(error);
 		return null;
+	}
+}
+
+// Returns an array of arrays, with the inner arrays containing objects of the type OrgPersonInfo
+async function fetchAllData(organisations: string[]): Promise<OrgPersonInfo[][]> {
+	const requestOptions = {
+		method: 'GET',
+		headers: {
+			'Authorization': 'Basic ' + btoa(WORDPRESS_USERNAME + ':' + APPLICATION_PASSWORD)
+		}
+	};
+
+	const promises = organisations.map(org =>
+		fetch(`${PERSON_COLLECTION_ORG_ENDPOINT}${org}`, requestOptions).then(response => response.json())
+	);
+
+	try {
+		const settledPromises = await Promise.allSettled(promises);
+		const results = settledPromises.map(promise => {
+			if (promise.status === 'fulfilled') {
+				return promise.value;
+			} else {
+				console.error('Failed to fetch data:', promise.reason);
+				return []; // Handle rejected promise
+			}
+		});
+		return results;
+	} catch (error) {
+		console.error('An unexpected error occurred:', error);
+		throw error; // This catch is for any unexpected errors, though unlikely here.
+	}
+}
+
+
+export async function fetchAndFlattenData(organisations: string[]) {
+	try {
+		const nestedResults = await fetchAllData(organisations);
+		const flatResults = nestedResults.flat(); // Use Array.prototype.flat() to flatten the array
+		return flatResults;
+	} catch (error) {
+		console.error('An error occurred while fetching and flattening data:', error);
+		throw error;
 	}
 }
