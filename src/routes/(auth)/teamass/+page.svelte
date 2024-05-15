@@ -6,12 +6,15 @@
 	let { data } = $props();
 	let peopleArray: OrgPersonInfo[] | null = $state(data.orgPersonInfo);
 	let personOrgs: string[] | undefined = $state(data.personOrgs);
+	personOrgs?.forEach((heading, index) => {
+		console.log(index, heading)
+	})
 </script>
 
 {#if personOrgs && peopleArray}
 	<div class="max-w-full flex flex-row items-center justify-center">
 		{#each personOrgs as heading (uuidv4())}
-			<NameList {heading} content={peopleArray.filter(person => person.org.includes(heading))} />
+			<NameList {heading} personInfoList={peopleArray.filter(person => person.org.includes(heading))} />
 		{/each}
 	</div>
 {/if}

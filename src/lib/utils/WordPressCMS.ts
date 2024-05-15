@@ -160,9 +160,23 @@ export async function fetchAndFlattenData(organisations: string[]) {
 	try {
 		const nestedResults = await fetchAllData(organisations);
 		const flatResults = nestedResults.flat(); // Use Array.prototype.flat() to flatten the array
-		return flatResults;
+		return removeDuplicates(flatResults);
 	} catch (error) {
 		console.error('An error occurred while fetching and flattening data:', error);
 		throw error;
 	}
 }
+
+//Just a utility function to filter out the duplicate for the fetchAndFlattenData function
+function removeDuplicates(data: OrgPersonInfo[]): OrgPersonInfo[] {
+	const seenIDs = new Set<number>();
+	return data.filter(person => {
+		if (seenIDs.has(person.id)) {
+			return false;
+		} else {
+			seenIDs.add(person.id);
+			return true;
+		}
+	});
+}
+
