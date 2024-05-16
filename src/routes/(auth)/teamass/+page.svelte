@@ -6,9 +6,6 @@
 	let { data } = $props();
 	let peopleArray: OrgPersonInfo[] | null = $state(data.orgPersonInfo);
 	let personOrgs: string[] | undefined = $state(data.personOrgs);
-	personOrgs?.forEach((heading, index) => {
-		console.log(index, heading)
-	})
 </script>
 
 {#if personOrgs && peopleArray}

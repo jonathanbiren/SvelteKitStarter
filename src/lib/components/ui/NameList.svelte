@@ -15,8 +15,8 @@
 	<div class="max-h-96 overflow-y-scroll w-56 border-2 border-gray-400 mx-8 bg-white">
 		<div class="h-full">
 			{#each searchConditionList as person, index (person.id)}
-				<p class="pl-2">{1 + index}. {person.title}</p>
-				<p></p>
+				<a href="/teamass/{person.id}"><p class="pl-2 py-1 px-4 {index %2 == 0 ? 'bg-gray-200' : ''} hover:bg-blue-400">{1 + index}
+					. {person.title}</p></a>
 			{/each}
 		</div>
 	</div>

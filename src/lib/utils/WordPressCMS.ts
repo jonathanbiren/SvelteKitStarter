@@ -39,7 +39,6 @@ export interface OrgPersonInfo {
 
 export async function fetchPersonByID(id: string): Promise<Person | null> {
 	try {
-		console.log('fetching person with id: ', id);
 		const res: Response = await fetch(`${PERSON_COLLECTION_ENDPOINT}/${id}`);
 		if (!res.ok) {
 			throw new Error('Error occured when trying to fetch person by ID');
@@ -63,7 +62,6 @@ export async function fetchPersonImageURL(person: Person): Promise<string> {
 		const imgURL: string = imgMetaData.media_details?.sizes.full.source_url || '';
 		return imgURL;
 	} catch (error) {
-		console.error('This person does not have an image');
 		return '';
 	}
 }

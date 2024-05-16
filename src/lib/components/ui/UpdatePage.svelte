@@ -1,12 +1,15 @@
+<!--
+This component is very similar to the 'edit' page, however, it differs in the fact that it needs to pass
+the id of the person to the custom form action, since the person we are tying to update is not the person
+that is logged in, but the person whose profile we are editing.
+-->
 <script lang="ts">
 	import type { Person } from '$lib/types/Person';
 	import { page } from '$app/stores';
 	import { DEFAULT_IMG_URL } from '$lib/utils/WordPressCMS';
 	import MailToButton from '$lib/components/ui/MailToButton.svelte';
 
-	let { data } = $props();
-	let person: Person | null | undefined = $state(data.person);
-	let imgURL: string | undefined = $state(data.imgURL);
+	let { person, imgURL }: { person: Person, imgURL: string } = $props();
 	let form = $state($page.form);
 
 	function openModal(event: Event) {
@@ -29,6 +32,7 @@ Community Mirrors Profilseite aktualisieren.`;
 			<div class="flex flex-col items-center justify-center mb-20">
 				<img src={imgURL || DEFAULT_IMG_URL } alt={person?.acf.firstname} class="w-64 h-auto" />
 				<input type="file" name="newImage" accept="image/*" class="mb-4 mx-auto" required>
+				<input type="hidden" name="userId" value={person?.id}>
 				<button type="submit" class="btn btn-accent">
 					Change Image
 				</button>
@@ -45,7 +49,7 @@ Community Mirrors Profilseite aktualisieren.`;
 				{/if}
 			</div>
 		</div>
-		<form method="POST" action="?/updateUser">
+		<form method="POST" action="?/updateUserWithID">
 			<div class="grid grid-cols-4 bg-slate-300">
 				<div class="flex flex-col items-center justify-items-start col-span-2 mx-10">
 					<div class="flex flex-col items-center justify-center w-full m-3">
@@ -62,9 +66,7 @@ Community Mirrors Profilseite aktualisieren.`;
 						<p class="font-bold">E-Mail</p>
 						<input readonly name="email" type="text" placeholder="Type here" value={person?.acf.email}
 									 class="input input-bordered w-full max-w-md text-center my-1.5" />
-						<!--<div class="tooltip absolute right-[-39px] top-[30px] " data-tip="hello">
-							<button class="btn" onclick={(event) => event.preventDefault()}>i</button>
-						</div>-->
+						<input type="hidden" name="userId" value={person?.id}>
 						<button class="btn btn-ghost btn-circle btn-sm absolute top-[39px] right-[5px]"
 										onclick={(event) => openModal(event)}>
 							<span class="material-icons">mail</span>
@@ -96,7 +98,6 @@ Community Mirrors Profilseite aktualisieren.`;
 					</div>
 				</div>
 				<div class="col-span-2 h-full">
-					<div class="text-center font-bold pb-3"><h2>Beschreibung</h2></div>
 					<textarea name="content" class="textarea textarea-bordered h-1/2 w-full">{person?.content.rendered}</textarea>
 				</div>
 			</div>
