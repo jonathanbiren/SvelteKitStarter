@@ -59,12 +59,12 @@ Community Mirrors Profilseite aktualisieren.`;
 					</div>
 					<div class="flex flex-col items-center justify-center w-full m-3">
 						<p class="font-bold">Nachname</p>
-						<input name="lastName" type="text" placeholder="Type here" value={person?.acf.lastname}
+						<input name="lastName" type="text" placeholder="Type here" value={person?.acf.lastname || ''}
 									 class="input input-bordered w-full max-w-md text-center my-1.5" />
 					</div>
 					<div class="relative flex flex-col items-center justify-center w-full m-3">
 						<p class="font-bold">E-Mail</p>
-						<input readonly name="email" type="text" placeholder="Type here" value={person?.acf.email}
+						<input readonly name="email" type="text" placeholder="Type here" value={person?.acf.email || ''}
 									 class="input input-bordered w-full max-w-md text-center my-1.5" />
 						<input type="hidden" name="userId" value={person?.id}>
 						<button class="btn btn-ghost btn-circle btn-sm absolute top-[39px] right-[5px]"
@@ -83,17 +83,17 @@ Community Mirrors Profilseite aktualisieren.`;
 					</div>
 					<div class="flex flex-col items-center justify-center w-full m-3">
 						<p class="font-bold">Funktion</p>
-						<input name="role" type="text" placeholder="Type here" value={person?.acf.function}
+						<input name="role" type="text" placeholder="Type here" value={person?.acf.function || ''}
 									 class="input input-bordered w-full max-w-md text-center my-1.5" />
 					</div>
 					<div class="flex flex-col items-center justify-center w-full m-3">
 						<p class="font-bold">Raum</p>
-						<input name="room" type="text" placeholder="Type here" value={person?.acf.room}
+						<input name="room" type="text" placeholder="Type here" value={person?.acf.room || ''}
 									 class="input input-bordered w-full max-w-md text-center my-1.5" />
 					</div>
 					<div class="flex flex-col items-center justify-center w-full m-3">
 						<p class="font-bold">Forschungsgebiete</p>
-						<input name="research" type="text" placeholder="Type here" value={person?.acf.research}
+						<input name="research" type="text" placeholder="Type here" value={person?.acf.research || ''}
 									 class="input input-bordered w-full max-w-md text-center my-1.5" />
 					</div>
 				</div>
