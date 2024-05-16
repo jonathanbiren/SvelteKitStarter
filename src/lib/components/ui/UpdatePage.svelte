@@ -28,7 +28,7 @@ Community Mirrors Profilseite aktualisieren.`;
 
 <div class="w-full">
 	<div class="flex flex-col items-center justify-items-start">
-		<form action="?/updateUserImage" method="POST" enctype="multipart/form-data" class="pb-0">
+		<form action="?/updateUserImgWithID" method="POST" enctype="multipart/form-data" class="pb-0">
 			<div class="flex flex-col items-center justify-center mb-20">
 				<img src={imgURL || DEFAULT_IMG_URL } alt={person?.acf.firstname} class="w-64 h-auto" />
 				<input type="file" name="newImage" accept="image/*" class="mb-4 mx-auto" required>
