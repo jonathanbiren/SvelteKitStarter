@@ -23,7 +23,6 @@ to achieve this by having multiple cards that show the user information -->
 <h1 class="mb-6 text-center text-3xl font-bold text-blue-800">Alle Nutzer</h1>
 <div class="h-2/3 w-1/2 overflow-auto scrollbar scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
 	{#each persons as person (person.id)}
-		{person.id}
 		<a href="/profiles/{person.id}">
 			<UserCardSmall
 				firstName={person.acf.firstname}

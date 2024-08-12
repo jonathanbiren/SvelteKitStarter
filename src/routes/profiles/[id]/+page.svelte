@@ -12,7 +12,7 @@
 	Community Mirrors Profil aktualisieren: \n\n`;
 </script>
 
-<div class="w-1/2 flex flex-col justify-center items-center">
+<div class="flex flex-col justify-center items-center w-1/2">
 	<UserCardBig {person} {imgURL}></UserCardBig>
 	<MailToButton {person} {buttonText} {emailBody}></MailToButton>
 </div>

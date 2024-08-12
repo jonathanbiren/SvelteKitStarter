@@ -1,7 +1,7 @@
 import { redirect } from '@sveltejs/kit';
 import { verifyToken } from '$lib/utils/jwtAuth.js';
 
-// The load fuction only checks whether the token is present and valid
+// The load function only checks whether the token is present and valid
 // This part of the code is not responsible for generating the token
 export function load({ cookies }) {
 	const token = cookies.get('jwt');

@@ -57,7 +57,7 @@
 		"docdash": "^2.0.2",
 		"js-cookie": "^3.0.5",
 		"jsonwebtoken": "^9.0.2",
-		"ldapts": "^7.0.10",
+		"ldapts": "^7.1.0",
 		"mock-aws-s3": "^4.0.2",
 		"nock": "^13.5.4",
 		"sqlite3": "^5.1.7",
